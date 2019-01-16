@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p> {{ sortTitle }} </p>
+    <p class="sort-title"> {{ sortTitle }} </p>
     <div class="">
       <div
         class=""
