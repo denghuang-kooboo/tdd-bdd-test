@@ -24,12 +24,8 @@ describe('Sort.vue', () => {
   })
 
   it('sortTitle should be same as seteed', () => {
-    const wrapper = createWrapper({
-      propsData: {
-        sortTitle: 'sort title'
-      }
-    })
-    // wrapper.setProps({sortTitle: 'sort title'})
+    const wrapper = shallowMount(Sort)
+     wrapper.setProps({sortTitle: 'sort title'})
     expect(wrapper.vm.sortTitle).toBe('sort title')
   })
 

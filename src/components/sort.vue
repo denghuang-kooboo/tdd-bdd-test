@@ -115,7 +115,7 @@ export default {
         if (!val) {
           return;
         }
-        val.sortBy + ":" + val.order;
+        this.sortValue = val.sortBy + ":" + val.order;
       },
       immediate: true
     }
