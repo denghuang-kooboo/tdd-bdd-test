@@ -1,0 +1,57 @@
+假设： 卡片列表页面 已经实现了页面卡片展示
+
+需求功能：
+1. 卡片列表页面 添加排序功能
+	1） 页面加载后要显示排序列表
+		① 标题： “排序”
+		② 列表： 时间升序、时间降序、价格升序
+	2） 点击排序选项，卡片会做相应的排序
+
+AC:
+1. Given 在卡片列表页面 When 页面加载完成 Then 标题“排序”要正常显示
+2. Given 在卡片列表页面 When 页面加载完成 Then 可以看到“时间升序”、“时间降序”、“价格升序”排序列表选项
+3. Given 在卡片列表页面 When 页面加载完成 Then “时间降序”选项被选中 And 卡片默认按照“时间降序”排列
+4. Given 在卡片列表页面 When 用户点击“时间升序” Then “时间升序”被选中 And 卡片按照“时间升序”排列
+5. Given 在卡片列表页面 When 用户点击“时间降序” Then “时间降序”被选中 And 卡片按照“时间降序”排列
+6. Given 在卡片列表页面 When 用户点击“价格升序” Then “价格升序”被选中 And 卡片按照“价格升序”排列
+
+
+sort 组件 单元测试用例:
+1. Given 在result页面 When 页面加载完成 And sortTitle没有赋值 Then sort title要显示 "排序" 
+2. Given 在result页面 When 页面加载完成 And sortTitle赋值"sort title'" Then sort title要显示 "sort title"
+2. Given 在result页面 When 页面加载完成 And sortValue为“时间升序”选项 Then 时间升序选项要被选中
+3. Given 在result页面 When 页面加载完成 Then 所有的sort选项名称要正确显示 
+4. Given 在result页面 When 页面加载完成 Then 所有的sort选项都要按照正确顺序排列
+5. Given 在result页面 When 页面在家完成 And 用户点击“价格升序” 选项 Then “价格升序” 选项要 emit 出来
+
+
+1. sortoptions: [{
+	sortIndex: number,
+	srderBy: "time",
+	title: "",
+	order: 'asc desc',
+	defaultSelected: true
+}]
+	1. 时间 +
+	2. 时间 -
+	3. 名字 + 
+	4. 名字 -
+	5. 价格 + 
+	6. 价格 -
+
+2. plan list: [{
+	id: guid,
+	name: string,
+	price: number
+	createDate: date
+}]
+
+1. 大家理解的TDD
+2. TDD的注意事项
+
+3. 我们所做的TDD的流程
+	1. 分析需求得出AC
+	2. 根据AC整理成BDD 的 feture，进一步生成 test case（验收测试）
+	3. 根据AC进行具体设计，得出
+		1）需要 sort 组件，根据AC设计出 面向组件的ut的case，并且根据ut case 实现设计接口， 实现功能，在此过程中不断重构
+		2）sorting 方法， 根绝AC设计出面向方法的ut的case，并且根据ut case 实现设计接口， 实现功能，在此过程中不断重构
