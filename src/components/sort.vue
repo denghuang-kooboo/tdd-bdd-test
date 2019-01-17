@@ -28,7 +28,7 @@ export default {
     sortTitle: {
       type: String,
       default() {
-        return 'default sort title'
+        return '排序'
       }
     },
     sortOptions: {
