@@ -37,37 +37,11 @@ export default {
     },
     sortOptions: {
       type: Array,
-      default() {
-        return [
-          {
-            label: "时间升序",
-            sortIndex: "1",
-            order: "asc",
-            sortBy: "time"
-          },
-          {
-            label: "时间降序",
-            sortIndex: "2",
-            order: "desc",
-            sortBy: "time"
-          },
-          {
-            label: "价格升序",
-            sortIndex: "3",
-            order: "asc",
-            sortBy: "price"
-          }
-        ];
-      }
+      required: true
     },
     selectedSort: {
       type: Object,
-      default() {
-        return {
-          order: "desc",
-          sortBy: "time"
-        };
-      }
+      required: true
     }
   },
   computed: {
