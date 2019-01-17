@@ -34,13 +34,13 @@ describe('Sort.vue', () => {
     }, options || {}))
   }
 
-  it('should default sortTitle', () => {
+  it('sortTitle should be default when no set', () => {
     const wrapper = createWrapper()
 
     expect(wrapper.vm.sortTitle).toBe('default sort title')
   })
 
-  it('sortTitle should be same as seteed', () => {
+  it('sortTitle should be same as set', () => {
     const wrapper = createWrapper()
 
     wrapper.setProps({ sortTitle: 'sort title' })
