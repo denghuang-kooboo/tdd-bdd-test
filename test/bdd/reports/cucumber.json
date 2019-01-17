@@ -1,0 +1,49 @@
+[
+  {
+    "description": "  In order to show result page by order, we need to provide order function for users to sort the result page",
+    "keyword": "Feature",
+    "name": "Sort function",
+    "line": 1,
+    "id": "sort-function",
+    "tags": [],
+    "uri": "tests\\bdd\\features\\sort.feature",
+    "elements": [
+      {
+        "id": "sort-function;show-sort-sidebar-in-result-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "show sort sidebar in result page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I open home page",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3279000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "\"detault sort title\" should show in result page",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 47000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

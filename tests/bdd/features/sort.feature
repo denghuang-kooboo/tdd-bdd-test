@@ -3,4 +3,4 @@ Feature: Sort function
 
 Scenario: show sort sidebar in result page
   Given I open home page
-  Then detault sort title should show in result page
+  Then "detault sort title" should show in result page
