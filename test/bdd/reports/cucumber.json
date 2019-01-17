@@ -1,45 +1,295 @@
 [
   {
-    "description": "  In order to show result page by order, we need to provide order function for users to sort the result page",
+    "description": "  1. 页面加载后要显示排序列表\n  1) 标题： “排序”\n  2) 列表： 时间升序、时间降序、价格升序\n  2. 点击排序选项，卡片会做相应的排序",
     "keyword": "Feature",
-    "name": "Sort function",
+    "name": "卡片列表页面 添加排序功能",
     "line": 1,
-    "id": "sort-function",
+    "id": "卡片列表页面-添加排序功能",
     "tags": [],
     "uri": "tests\\bdd\\features\\sort.feature",
     "elements": [
       {
-        "id": "sort-function;show-sort-sidebar-in-result-page",
+        "id": "卡片列表页面-添加排序功能;显示“排序”标题",
         "keyword": "Scenario",
-        "line": 4,
-        "name": "show sort sidebar in result page",
+        "line": 7,
+        "name": "显示“排序”标题",
         "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
-            "name": "I open home page",
+            "line": 8,
+            "name": "在卡片列表页面",
             "match": {
               "location": "tests\\bdd\\features\\step-definitions\\sort.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 3279000000
+              "duration": 3445000000
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
-            "line": 6,
-            "name": "\"detault sort title\" should show in result page",
+            "keyword": "When ",
+            "line": 9,
+            "name": "页面加载完成",
             "match": {
               "location": "tests\\bdd\\features\\step-definitions\\sort.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 47000000
+              "duration": 43000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "标题\"排序\"要正常显示",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "卡片列表页面-添加排序功能;默认排序",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "默认排序",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "在卡片列表页面",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 172000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "页面加载完成",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "\"时间降序\"选项被选中",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:18"
+            },
+            "result": {
+              "status": "pending"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "卡片默认按照\"时间降序\"排列",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:23"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "卡片列表页面-添加排序功能;用户点击排序选项",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "用户点击排序选项",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "在卡片列表页面",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 68000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "用户点击时间升序",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:28"
+            },
+            "result": {
+              "status": "pending"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "时间升序被选中",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:33"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "卡片按照时间升序排列",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:38"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "卡片列表页面-添加排序功能;用户点击排序选项",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "用户点击排序选项",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "在卡片列表页面",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "用户点击时间降序",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:43"
+            },
+            "result": {
+              "status": "pending"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "时间降序被选中",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:48"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "卡片按照时间降序排列",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:53"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "卡片列表页面-添加排序功能;用户点击排序选项",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "用户点击排序选项",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "在卡片列表页面",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "用户点击价格升序",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:58"
+            },
+            "result": {
+              "status": "pending"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "价格升序被选中",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:63"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "卡片按照价格升序排列",
+            "match": {
+              "location": "tests\\bdd\\features\\step-definitions\\sort.js:68"
+            },
+            "result": {
+              "status": "skipped"
             }
           }
         ]
