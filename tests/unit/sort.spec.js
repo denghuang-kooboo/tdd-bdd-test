@@ -47,7 +47,7 @@ describe('Sort.vue', () => {
     expect(wrapper.vm.sortTitle).toBe('sort title')
   })
 
-  it('time asc radio should selected when selectedSort is time asc', () => {
+  it('time asc radio should selected when selectedSort prop is time asc', () => {
     const wrapper = createWrapper({
       propsData: {
         selectedSort: {
@@ -57,10 +57,9 @@ describe('Sort.vue', () => {
       }
     })
 
-    let thirdRadio = wrapper.find('[value="time:asc"]')
-
-    // 怎么验证默认选中
-    console.log(thirdRadio.vm)
+    expect(wrapper.find('[value="time:asc"]').element.checked).toBe(true)
+    expect(wrapper.find('[value="time:desc"]').element.checked).toBe(false)
+    expect(wrapper.find('[value="price:asc"]').element.checked).toBe(false)
   })
 
   it('should display all sortOption', () => {
@@ -70,9 +69,19 @@ describe('Sort.vue', () => {
   })
 
   it('should display all sortOption and correct order', () => {
-    // const wrapper = createWrapper()
+    const wrapper = createWrapper()
 
-    // expect(wrapper.findAll('[type="radio"]').length).toBe(3)
+    var labelForTimeASC = wrapper.findAll('[for="time:asc"]').at(0)
+    expect(labelForTimeASC.is('label')).toBe(true)
+    expect(labelForTimeASC.text()).toBe('时间升序')
+
+    var labelForTimeASC = wrapper.findAll('[for="time:desc"]').at(0)
+    expect(labelForTimeASC.is('label')).toBe(true)
+    expect(labelForTimeASC.text()).toBe('时间降序')
+
+    var labelForTimeASC = wrapper.findAll('[for="price:asc"]').at(0)
+    expect(labelForTimeASC.is('label')).toBe(true)
+    expect(labelForTimeASC.text()).toBe('价格升序')
   })
 
   it('should emitted the selected option', () => {
@@ -80,6 +89,7 @@ describe('Sort.vue', () => {
 
     let thirdRadio = wrapper.find('[value="price:asc"]')
     thirdRadio.trigger('click')
+    expect(thirdRadio.element.checked).toBe(true)
 
     let emitted = wrapper.emitted('sort')
     expect(emitted[0][0].order).toBe('asc')

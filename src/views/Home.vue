@@ -20,7 +20,7 @@ export default {
   components: {
     TddSort
   },
-  data () {
+  data() {
     return {
       planList: [
         {
@@ -69,7 +69,8 @@ export default {
     }
   },
   methods: {
-    sorting (value) {
+    sorting(value) {
+      console.log(['sorting', value])
       this.sortObj = _.clone(value)
       let sortBy = value.sortBy
       let order = value.order
