@@ -15,6 +15,7 @@
 import moment from 'moment'
 import TddSort from '@/components/sort'
 import _ from 'lodash'
+import sortService from '@/service/sort.js'
 export default {
   name: 'home',
   components: {
@@ -70,11 +71,8 @@ export default {
   },
   methods: {
     sorting(value) {
-      console.log(['sorting', value])
       this.sortObj = _.clone(value)
-      let sortBy = value.sortBy
-      let order = value.order
-      this.planList = _.orderBy(this.planList, [sortBy], [order])
+      this.planList = sortService.sorting(value, this.planList)
     }
   }
 }
