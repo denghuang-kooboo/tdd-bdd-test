@@ -47,7 +47,7 @@ describe('Sort.vue', () => {
     expect(wrapper.vm.sortTitle).toBe('sort title')
   })
 
-  it('time asc radio should selected when  selectedSort is time asc', () => {
+  it('time asc radio should selected when selectedSort is time asc', () => {
     const wrapper = createWrapper({
       propsData: {
         selectedSort: {
@@ -63,6 +63,18 @@ describe('Sort.vue', () => {
     console.log(thirdRadio.vm)
   })
 
+  it('should display all sortOption', () => {
+    const wrapper = createWrapper()
+
+    expect(wrapper.findAll('[type="radio"]').length).toBe(3)
+  })
+
+  it('should display all sortOption and correct order', () => {
+    // const wrapper = createWrapper()
+
+    // expect(wrapper.findAll('[type="radio"]').length).toBe(3)
+  })
+
   it('should emitted the selected option', () => {
     const wrapper = createWrapper()
 
@@ -72,11 +84,5 @@ describe('Sort.vue', () => {
     let emitted = wrapper.emitted('sort')
     expect(emitted[0][0].order).toBe('asc')
     expect(emitted[0][0].sortBy).toBe('price')
-  })
-
-  it('should display all sortOption', () => {
-    const wrapper = createWrapper()
-
-    expect(wrapper.findAll('[type="radio"]').length).toBe(3)
   })
 })
