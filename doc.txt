@@ -65,3 +65,5 @@ sort service sorting 方法  AC
 3. sorting should sort by price asc
 
 
+new solution for bdd: https://github.com/mucsi96/nightwatch-api/tree/master/packages/cucumber-example
+
