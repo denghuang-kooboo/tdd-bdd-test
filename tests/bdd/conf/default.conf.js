@@ -4,7 +4,7 @@ const geckodriverPath = require('geckodriver').path;
 const seleniumServerPath = require('selenium-server').path;
 
 nightwatchCucumber({
-  cucumberArgs: ['--require', 'tests/bdd/features/step-definitions','--format', 'node_modules/cucumber-pretty', '--format', 'json:test/bdd/reports/cucumber.json', 'tests/bdd/features']
+  cucumberArgs: ['--require', 'tests/bdd/features/step-definitions','--format', 'node_modules/cucumber-pretty', '--format', 'json:tests/bdd/reports/cucumber.json', 'tests/bdd/features']
 });
 
 module.exports = {

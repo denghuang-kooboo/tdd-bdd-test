@@ -1,3 +1,14 @@
+
+1. 大家理解的TDD
+2. TDD的注意事项
+
+3. 我们所做的BDD+TDD的流程
+	1. 分析需求得出AC
+	2. 根据AC整理成BDD 的 feture，进一步生成 test case（验收测试）
+	3. 根据AC进行具体设计，得出
+		1）需要 sort 组件，根据AC设计出 面向组件的ut的case，并且根据ut case 实现设计接口， 实现功能，在此过程中不断重构
+		2）sorting 方法， 根绝AC设计出面向方法的ut的case，并且根据ut case 实现设计接口， 实现功能，在此过程中不断重构
+
 假设： 卡片列表页面 已经实现了页面卡片展示
 
 需求功能：
@@ -23,12 +34,7 @@ sort 组件 单元测试用例:
 4. Given in result page when page loaded and sortObj set value "time desc" then time asc radio should selected
 5. Given in result page when page loaded and click "time asc" then should emitted the "time asc" option
 
-sort service sorting 方法  AC
-1. sorting should sort by time asc
-2. sorting should sort by time desc
-3. sorting should sort by price asc
-
-
+分析组件：
 1. sortoptions: [{
     label: '时间升序',
     sortIndex: '1',
@@ -53,13 +59,9 @@ sortObj: {
     order: 'desc'
     }
 
+sort service sorting 方法  AC
+1. sorting should sort by time asc
+2. sorting should sort by time desc
+3. sorting should sort by price asc
 
-1. 大家理解的TDD
-2. TDD的注意事项
 
-3. 我们所做的TDD的流程
-	1. 分析需求得出AC
-	2. 根据AC整理成BDD 的 feture，进一步生成 test case（验收测试）
-	3. 根据AC进行具体设计，得出
-		1）需要 sort 组件，根据AC设计出 面向组件的ut的case，并且根据ut case 实现设计接口， 实现功能，在此过程中不断重构
-		2）sorting 方法， 根绝AC设计出面向方法的ut的case，并且根据ut case 实现设计接口， 实现功能，在此过程中不断重构
